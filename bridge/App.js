@@ -1,11 +1,22 @@
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator, createSwitchNavigator } from '@react-navigation/stack';
+import { CommonActions } from '@react-navigation/native';
+import { createAppContainer } from '@react-navigation/native';
+import Onboard from './screens/Onboard'
+
+
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Onboard">
+        <Stack.Screen name="Onboard" component={Onboard} options={{title: 'Bridge'}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
