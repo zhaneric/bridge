@@ -14,7 +14,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Onboard">
-        <Stack.Screen name="Onboard" component={Onboard} options={{title: 'Bridge'}}/>
+        <Stack.Screen name="Onboard" component={Onboard} options={{title: 'Bridge', headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
