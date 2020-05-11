@@ -5,6 +5,8 @@ import { createStackNavigator, createSwitchNavigator } from '@react-navigation/s
 import { CommonActions } from '@react-navigation/native';
 import { createAppContainer } from '@react-navigation/native';
 import Onboard from './screens/Onboard'
+import Welcome from './screens/Welcome'
+import CheckIn from './screens/CheckIn'
 
 
 
@@ -15,6 +17,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Onboard">
         <Stack.Screen name="Onboard" component={Onboard} options={{title: 'Bridge', headerShown: false}}/>
+        <Stack.Screen name="Welcome" component={Welcome} options={{title: 'Bridge', headerShown: false}}/>
+        <Stack.Screen name="CheckIn" component={CheckIn} options={{title: 'Bridge', headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
