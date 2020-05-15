@@ -19,7 +19,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome">
+      <Stack.Navigator initialRouteName="Onboard">
         <Stack.Screen name="Onboard" component={Onboard} options={{title: 'Bridge', headerShown: false}}/>
         <Stack.Screen name="Welcome" component={Welcome} options={{title: 'Bridge', headerShown: false}}/>
         <Stack.Screen name="CheckIn" component={CheckIn} options={{title: 'Bridge', headerShown: false}}/>

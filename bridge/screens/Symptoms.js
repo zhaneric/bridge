@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
     header: {
         color: 'white',
         fontSize: 24,
-        marginTop: '16%',
-        marginBottom: '8%',
+        marginTop: '8%',
+        marginBottom: '4%',
         alignSelf: 'center',
         textAlign: 'center'
     },
@@ -33,13 +33,15 @@ const styles = StyleSheet.create({
 
 export default class Symptoms extends React.Component{
     state = {
-        symptomSelected: false,
-       
-    }
-
-    handleCheckBox = (id) => {
-        this.setState({ symptomSelected: !this.state.symptomSelected })
-        console.log(id)
+        constipation: false,
+        diarrhea: false,
+        difficultyBreathing: false,
+        muscleJointPain: false,
+        stomachAche: false,
+        fever: false,
+        nausea: false, 
+        headache: false,
+        chestPain: false
     }
 
     render(){
@@ -53,32 +55,22 @@ export default class Symptoms extends React.Component{
                     <Text style = {styles.header}> Are you feeling any of these symptoms?</Text>
                 </View> 
                 
-                <Row image={this.state.symptomSelected ? images.icons.check : images.icons.uncheck} onPress={() => this.handleCheckBox(1)}  title={'Constipation'}/>  
-                <Row image={this.state.symptomSelected ? images.icons.check : images.icons.uncheck} onPress={() => this.handleCheckBox(2)}  title={'Diarrhea'} style = {{marginTop: 2}}/>  
-                <Row image={this.state.symptomSelected ? images.icons.check : images.icons.uncheck} onPress={() => this.handleCheckBox(3)} title={'Difficulty Breathing'} style = {{marginTop: 2}}/>  
-                <Row image={this.state.symptomSelected ? images.icons.check : images.icons.uncheck} onPress={() => this.handleCheckBox(3)} title={'Muscle/Joint Pain'} style = {{marginTop: 2}}/>  
-                <Row image={this.state.symptomSelected ? images.icons.check : images.icons.uncheck} onPress={() => this.handleCheckBox(3)} title={'Stomach Ache'} style = {{marginTop: 2}}/>  
-                <Row image={this.state.symptomSelected ? images.icons.check : images.icons.uncheck} onPress={() => this.handleCheckBox(3)} title={'Fever'} style = {{marginTop: 2}}/>  
-                <Row image={this.state.symptomSelected ? images.icons.check : images.icons.uncheck} onPress={() => this.handleCheckBox(3)} title={'Nausea'} style = {{marginTop: 2}}/>  
+                <Row image={this.state.constipation ? images.icons.check : images.icons.uncheck} onPress={() => this.setState({ constipation: !this.state.constipation })}  title={'Constipation'}/>  
+                <Row image={this.state.diarrhea ? images.icons.check : images.icons.uncheck} onPress={() => this.setState({ diarrhea: !this.state.diarrhea })}  title={'Diarrhea'} style = {{marginTop: 2}}/>  
+                <Row image={this.state.difficultyBreathing ? images.icons.check : images.icons.uncheck} onPress={() => this.setState({ difficultyBreathing: !this.state.difficultyBreathing })} title={'Difficulty Breathing'} style = {{marginTop: 2}}/>  
+                <Row image={this.state.muscleJointPain ? images.icons.check : images.icons.uncheck} onPress={() => this.setState({ muscleJointPain: !this.state.muscleJointPain })} title={'Muscle/Joint Pain'} style = {{marginTop: 2}}/>  
+                <Row image={this.state.stomachAche ? images.icons.check : images.icons.uncheck} onPress={() => this.setState({ stomachAche: !this.state.stomachAche })} title={'Stomach Ache'} style = {{marginTop: 2}}/>  
+                <Row image={this.state.fever ? images.icons.check : images.icons.uncheck} onPress={() => this.setState({ fever: !this.state.fever })} title={'Fever'} style = {{marginTop: 2}}/>  
+                <Row image={this.state.nausea ? images.icons.check : images.icons.uncheck} onPress={() => this.setState({ nausea: !this.state.nausea })} title={'Nausea'} style = {{marginTop: 2}}/>  
+                <Row image={this.state.headache ? images.icons.check : images.icons.uncheck} onPress={() => this.setState({ headache: !this.state.headache })} title={'Headache'} style = {{marginTop: 2}}/>  
+                <Row image={this.state.chestPain ? images.icons.check : images.icons.uncheck} onPress={() => this.setState({ chestPain: !this.state.chestPain })}  title={'Chest Pain'} style = {{marginTop: 2}}/>  
 
-                <CompleteButton style = {{marginTop: 24}} onPress={() => this.props.navigation.navigate('ContactsNotified')}/>
+                <CompleteButton style = {{marginTop: 16}} onPress={() => this.props.navigation.navigate('ContactsNotified')}/>
             </View>
         );
     }
 }
 
-
-
-const CheckBox = ({ selected, onPress, style, textStyle, size = 30, color = '#211f30', text = '', ...props}) => (
-    <TouchableOpacity style={[styles.checkBox, style]} onPress={onPress} {...props}>
-        <Icon
-            size={size}
-            color={color}
-            name={ selected ? images.icons.check : images.icons.uncheck}
-        />
-        <Text style={textStyle}> {text} </Text>
-    </TouchableOpacity>
-)
 
 const CheckBoxButton = ({image, onPress, style}) => {
     return (
