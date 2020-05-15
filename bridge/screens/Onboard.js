@@ -38,10 +38,11 @@ export default class Onboard extends React.Component{
                     source={require('../assets/Onboard.png')}
                     style={styles.stretch}
                 >
-                    <TouchableOpacity
-                        style={styles.button}>
-                            <Text style={styles.text}>GET STARTED</Text>
-                    </TouchableOpacity> 
+                    <TouchableOpacity style={styles.button}
+                      onPress = {()=>{this.props.navigation.navigate('Login')}}
+                    >
+                            <Text style={styles.text}>SIGN IN</Text>
+                    </TouchableOpacity>
                 </ImageBackground>
             </View>
         );
