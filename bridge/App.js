@@ -7,6 +7,10 @@ import { createAppContainer } from '@react-navigation/native';
 import Onboard from './screens/Onboard'
 import Welcome from './screens/Welcome'
 import CheckIn from './screens/CheckIn'
+import WhyUnwell from './screens/WhyUnwell';
+import FeelingGreat from './screens/FeelingGreat';
+import Symptoms from './screens/Symptoms';
+import ContactsNotified from './screens/ContactsNotified';
 
 
 
@@ -15,10 +19,14 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Onboard">
+      <Stack.Navigator initialRouteName="Welcome">
         <Stack.Screen name="Onboard" component={Onboard} options={{title: 'Bridge', headerShown: false}}/>
         <Stack.Screen name="Welcome" component={Welcome} options={{title: 'Bridge', headerShown: false}}/>
         <Stack.Screen name="CheckIn" component={CheckIn} options={{title: 'Bridge', headerShown: false}}/>
+        <Stack.Screen name="FeelingGreat" component={FeelingGreat} options={{title: 'Bridge', headerShown: false}}/>
+        <Stack.Screen name="WhyUnwell" component={WhyUnwell} options={{title: 'Bridge', headerShown: false}}/>
+        <Stack.Screen name="Symptoms" component={Symptoms} options={{title: 'Bridge', headerShown: false}}/>
+        <Stack.Screen name="ContactsNotified" component={ContactsNotified} options={{title: 'Bridge', headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

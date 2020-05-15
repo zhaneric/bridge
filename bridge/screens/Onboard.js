@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
         alignSelf: 'stretch',
         width: undefined,
         height: undefined,
-        resizeMode: 'cover',
         alignItems: 'center',
     },
     button: {
